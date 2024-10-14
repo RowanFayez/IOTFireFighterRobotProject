@@ -1,32 +1,20 @@
 import 'package:flutter/material.dart';
 
 class SensorData with ChangeNotifier {
-  double _flame = 0.0;
-  double _smoke = 0.0;
+  String _flame = 'L:0 M:0 R:0'; // Change to store the entire flame status
   String _state = '';
 
-  double get flame => _flame;
-  double get smoke => _smoke;
+  String get flame => _flame;
   String get state => _state;
 
-  void updateFlame(double value) {
+  // Update the entire flame status (L:M:R)
+  void updateFlame(String value) {
     _flame = value;
-    notifyListeners();
-  }
-
-  void updateSmoke(double value) {
-    _smoke = value;
-    notifyListeners();
+    notifyListeners(); // Notify UI to update
   }
 
   void updateState(String value) {
     _state = value;
-    notifyListeners();
+    notifyListeners(); // Notify UI to update
   }
-
-  void setStateMessage(String message) {}
-
-  void setSmokeMessage(String message) {}
-
-  void setFlameMessage(String message) {}
 }

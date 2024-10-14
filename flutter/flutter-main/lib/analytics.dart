@@ -73,8 +73,6 @@ class _AnalyticScreenState extends State<AnalyticScreen> {
                 children: [
                   _buildDataCard(
                       'Flame Sensor Status', sensorData.flame.toString()),
-                  _buildDataCard(
-                      'Smoke Sensor Status', sensorData.smoke.toString()),
                   _buildDataCard('Robot State', sensorData.state),
                 ],
               );
